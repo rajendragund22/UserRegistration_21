@@ -148,4 +148,15 @@ public class UserRegistrationTest {
         Assert.assertEquals(false, result);
     }
 
+    @Test
+    public void givenMessage_WhenHappy_ShouldReturnEntrySuccessful() {
+        String result = MoodAnalyser.analyseMood("I am in  Happy mood");
+        Assert.assertEquals("Entry Successful", result);
+    }
+
+    @Test
+    public void givenEmail2_WhenNotProper_ShouldReturnEntryFailed() {
+        String result = MoodAnalyser.analyseMood("I am in Sad mood");
+        Assert.assertEquals("Entry Failed", result);
+    }
 }
